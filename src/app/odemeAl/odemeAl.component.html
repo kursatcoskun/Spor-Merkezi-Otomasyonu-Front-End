@@ -1,0 +1,42 @@
+<main role="main">
+
+  <section class="jumbotron text-center">
+      <div style="height: 100% !important;" class="container">
+    <p style="text-align: center;font-size:1.6em;">Ödeme Al</p>
+    <form [formGroup]="odemeform" (ngSubmit)="add()">
+      <fieldset>
+     
+        <div hidden class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Uye Id</label>
+          <input type="text" id="uyeId" formControlName="uyeId" value="{{uyeId}}" class="form-control" aria-describedby="emailHelp" placeholder="">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Üyelik Tipi</label>
+          <input type="text" id="uyelikTipi" formControlName="uyelikTipi" class="form-control" aria-describedby="emailHelp" placeholder="Üyelik Tipi Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Üyelik Süresi(Gün)</label>
+          <input type="text" id="uyelikSuresi" formControlName="uyelikSuresi" class="form-control" aria-describedby="emailHelp" placeholder="Üyelik Süresi Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Kayıt Tarihi</label>
+          <input type="date" id="kayitTarihi" formControlName="kayitTarihi" class="form-control" aria-describedby="emailHelp" placeholder="Kayıt Tarihi Giriniz...">
+        </div>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Kayıt Tutarı(TL)</label>
+          <input type="text" id="kayitTutari" formControlName="kayitTutari" class="form-control" aria-describedby="emailHelp" placeholder="Kayıt Tutarı Giriniz...">
+        </div>
+         <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!odemeform.valid">Ödeme Al</button>
+      </fieldset>
+      <br>
+
+
+    </form>
+  </div>
+</section>
+
+</main>

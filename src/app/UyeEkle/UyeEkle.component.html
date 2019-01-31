@@ -1,0 +1,47 @@
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div style="height: 100% !important;" class="container">
+      <p style="text-align: center;font-size:1.6em;">Yeni Üye Oluştur</p>
+      <form [formGroup]="uyeAddForm" (ngSubmit)="add()">
+        <fieldset>
+       
+          <div class="form-group">
+            <label class="label-input" for="exampleInputEmail1">Ad</label>
+            <input type="text" id="name" formControlName="name" class="form-control" aria-describedby="emailHelp" placeholder="Ad Giriniz...">
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="label-input" for="exampleInputEmail1">Soyad</label>
+            <input type="text" id="surname" formControlName="surname" class="form-control" aria-describedby="emailHelp" placeholder="Soyad Giriniz...">
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="label-input" for="exampleInputEmail1">Telefon Numarası</label>
+            <input type="text" id="phone" formControlName="phone" class="form-control" aria-describedby="emailHelp" placeholder=" Telefon Numarası Giriniz...">
+          </div>
+          <br>
+          <div class="form-group">
+            <label class="label-input" for="exampleInputEmail1">Mail Adresi</label>
+            <input type="text" id="email" formControlName="email" class="form-control" aria-describedby="emailHelp" placeholder="Mail Adresi Giriniz...">
+          </div>
+          <!--
+          <div class="form-group">
+            <label for="exampleTextarea">Not</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+          </div>
+-->   <br>
+          <button type="submit" class="btn btn-primary" [disabled]="!uyeAddForm.valid">Yeni Üye Oluştur</button>
+        </fieldset>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        
+      </form>
+    </div>
+  </section>
+
+  </main>

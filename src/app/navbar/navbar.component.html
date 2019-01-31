@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <img style="max-width: 8%;max-height: 8%;" src="./assets/logolast.png">
+  <a style="font-size:1.3em;" class="navbar-brand" href="#">ADAM SPOR MERKEZİ</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul style="margin-left: 3% !important; font-size: 1.1em;" class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="giris" routerLinkActive="active" *ngIf="isAuthenticated()">Anasayfa</a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Uyelik/UyeleriListele" routerLinkActive="active" *ngIf="isAuthenticated()">Üyeler</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="isAuthenticated()" routerLink="Uyelik/UyeEkle" routerLinkActive="active">Üye Ekle <span class="sr-only">(current)</span></a>
+      </li>
+     
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Urunler/UrunleriGoster" routerLinkActive="active" *ngIf="isAuthenticated()">Ürünler</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Urunler/UrunEkle" routerLinkActive="active" *ngIf="isAuthenticated()">Ürün Ekle</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="satisyap" routerLinkActive="active" *ngIf="isAuthenticated()">Ürün Satış</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="satislar" routerLinkActive="active" *ngIf="isAuthenticated()">Satışlar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Giderler/GiderEkle" routerLinkActive="active" *ngIf="isAuthenticated()">Gider Ekle</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Giderler/GiderleriGoster" routerLinkActive="active" *ngIf="isAuthenticated()">Giderler</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="GelirGiderDurumu" routerLinkActive="active" *ngIf="isAuthenticated()">Gelir Gider Durumu</a>
+      </li>
+   
+    </ul>
+    <form *ngIf="!isAuthenticated()" #loginForm="ngForm" (ngSubmit)="login()" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="userName" 
+      [(ngModel)]="loginUser.userName" required type="text" placeholder="Kullanıcı Adı">
+      <input class="form-control mr-sm-2" name="password" 
+      [(ngModel)]="loginUser.password" required type="password" placeholder="Şifre">
+      <button style="text-transform: none;font-size: 1.1em;color: black;" class="btn btn-light my-2" [disabled]="!loginForm.valid"  type="submit">Giriş</button>
+    </form>
+    <p style="color: white;margin-right: 1%;margin-top: 1%;text-transform: none;font-size: 1.2em;" *ngIf="isAuthenticated()">HOŞGELDİNİZ, {{name}}</p>
+    <button class="btn btn-danger my-2 my-sm-0" *ngIf="isAuthenticated()" (click)="logout()" type="submit">Çıkış</button>
+  </div>
+</nav>

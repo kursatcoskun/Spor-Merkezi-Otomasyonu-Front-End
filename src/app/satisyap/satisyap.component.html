@@ -1,0 +1,55 @@
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+      <div style="height: 100% !important;" class="container">
+    <p style="text-align: center;font-size:1.6em;">Ürün Satış</p>
+    <form [formGroup]="satisform" (ngSubmit)="add()">
+      <fieldset>
+
+          <div hidden class="form-group">
+              <label class="label-input" for="exampleInputEmail1">Ürün Id</label>
+              <input type="text" id="urunId" value="{{selectedId}}" formControlName="urunId" class="form-control" aria-describedby="emailHelp" placeholder="Ürün Id Giriniz...">
+            </div>
+     
+
+        <div *ngIf="urunler" class="form-group">
+            <label class="label-input" for="exampleSelect1">Ürün Adı</label>
+            <select [(ngModel)]="deneme" (ngModelChange)="select()" style="text-align: center !important;" id="urunAdi" formControlName="urunAdi" class="form-control">
+              <option value="Ürün Id Giriniz...">Ürün Seçiniz</option>
+              <option value="{{urun.id}}" *ngFor="let urun of urunler">{{urun.urunAdi}}</option>
+            </select>
+          </div>
+
+        <br>
+        <div *ngIf="urunler" class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Ürün Fiyatı</label>
+          <input type="text" id="urunFiyati" value="{{selectedPrice}}" formControlName="urunFiyati" class="form-control" aria-describedby="emailHelp" placeholder="Ürün Fiyatını Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Toplam Ürün Adedi</label>
+          <input (change)="change2()" type="text" id="toplamUrunAdedi" formControlName="toplamUrunAdedi" class="form-control" aria-describedby="emailHelp" placeholder=" Toplam Ürün Adedini Giriniz...">
+        </div>
+
+        <div class="form-group">
+            <label class="label-input" for="exampleInputEmail1">Toplam Tutar</label>
+            <input type="text" id="toplamTutar" formControlName="toplamTutar" value="{{toplam}}" class="form-control" aria-describedby="emailHelp" placeholder=" Toplam Tutarı Giriniz...">
+          </div>
+        <br>
+    
+
+ <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!satisform.valid">Satış Yap</button>
+      </fieldset>
+   <br>
+
+
+
+
+
+    </form>
+  </div>
+</section>
+
+</main>

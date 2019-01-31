@@ -1,0 +1,45 @@
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+      <div style="height: 100% !important;" class="container">
+    <p style="text-align: center;font-size:1.6em;">Gider Ekleme</p>
+    <form [formGroup]="giderEklemeForm" (ngSubmit)="add()">
+      <fieldset>
+        <br>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Gider Açıklama</label>
+        
+          <input type="text" id="GiderAciklama" formControlName="GiderAciklama" class="form-control" aria-describedby="emailHelp" placeholder="Gider Açıklamasını Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Gider Miktarı</label>
+          <input type="text" id="GiderMiktari" formControlName="GiderMiktari" class="form-control" aria-describedby="emailHelp" placeholder="TL Cinsinden Gider Miktarını Giriniz...">
+        </div>
+        <br>
+    
+    
+    
+
+ <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!giderEklemeForm.valid">Ürün Ekle</button>
+      </fieldset>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+    </form>
+  </div>
+</section>
+
+</main>

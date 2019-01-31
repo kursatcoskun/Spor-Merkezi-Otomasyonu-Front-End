@@ -1,0 +1,94 @@
+<main role="main">
+  <section class="jumbotron text-center">
+      <div style="height: 100% !important;" class="container">
+
+<div class="table-responsive">
+    <button *ngIf="topGoster" style="margin-bottom: 3%;" class="btn btn-danger" (click)="getTopSeller()">En Çok Satılan Ürünü Göster</button>
+    <button *ngIf="topSellerSakla" style="margin-bottom: 3%;" class="btn btn-danger" (click)="gizle()">En Çok Satılan Ürünü Gizle</button>
+    <button style="margin-bottom: 3%;margin-left: 2%;" class="btn btn-success" (click)="exportAsXLSX()">Excel olarak İndir(.xlsx)</button>
+
+    <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-6">
+        <div style="display: block;margin-left:auto;margin-right: auto;" *ngIf="topSellerSakla" class="card text-white bg-info mb-3">
+            <div style="font-size: 1.5em !important;" class="card-header">{{ay}}.AY</div>
+            <div class="card-body">
+              <h4 class="card-title">{{urunAdi}}</h4>
+              <br>
+              <p style="font-size: 1.5em;" class="card-text">{{urunMiktari}} Adet => {{toplam}} TL</p>
+            </div>
+          </div>
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
+
+
+
+
+
+
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th>Satış Id</th>
+      <th>Ürün Id</th>
+      <th>Ürün Adı</th>
+      <th>Ürün Fiyatı</th>
+      <th>Ürün Adedi</th>
+      <th>Toplam Tutar</th>
+      <th>Satış Tarihi</th>
+      <th>İşlemler</th>
+  
+    </tr>
+  </thead>
+  <tbody *ngFor="let satis of satislar">
+  
+    <tr>
+      <td>{{satis.id}}</td>
+      <td>{{satis.urunId}}</td>
+      <td>{{satis.urunAdi}}</td>
+      <td>{{satis.urunFiyati}} TL</td>
+      <td>{{satis.toplamUrunAdedi}}</td>
+      <td>{{satis.toplamTutar}} TL</td>
+      <td>{{satis.satisTarihi}}</td>
+      <td>
+        <button class="btn btn-danger btn-sm" (click)="delete(satis.id)">Satışı Sil</button>
+
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</section>
+</main>
+
+
+

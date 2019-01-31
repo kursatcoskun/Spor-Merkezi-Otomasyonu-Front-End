@@ -1,0 +1,45 @@
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+      <div style="height: 100% !important;" class="container">
+    <p style="text-align: center;font-size:1.6em;">Ürün Ekleme</p>
+    <form [formGroup]="urunEklemeForm" (ngSubmit)="add()">
+      <fieldset>
+     
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Ürün Adı</label>
+          <input type="text" id="urunAdi" formControlName="urunAdi" class="form-control" aria-describedby="emailHelp" placeholder="Ürün Adını Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Ürün Fiyatı</label>
+          <input type="text" id="urunFiyati" formControlName="urunFiyati" class="form-control" aria-describedby="emailHelp" placeholder="Ürün Fiyatını Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Toplam Ürün Adedi</label>
+          <input type="text" id="toplamUrunAdedi" formControlName="toplamUrunAdedi" class="form-control" aria-describedby="emailHelp" placeholder=" Toplam Ürün Adedini Giriniz...">
+        </div>
+        <br>
+    
+
+ <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!urunEklemeForm.valid">Ürün Ekle</button>
+      </fieldset>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+
+    </form>
+  </div>
+</section>
+
+</main>

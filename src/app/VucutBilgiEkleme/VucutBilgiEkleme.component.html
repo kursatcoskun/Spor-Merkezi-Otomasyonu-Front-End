@@ -1,0 +1,76 @@
+<main role="main">
+
+  <section class="jumbotron text-center">
+      <div style="height: 100% !important;" class="container">
+    <p style="text-align: center;font-size:1.6em;">Üye Vücut Bilgileri Oluştur</p>
+    <form [formGroup]="vucutBilgiForm" (ngSubmit)="add()">
+      <fieldset>
+     
+        <div hidden class="form-group">
+          <label class="label-input" for="exampleInputEmail1"></label>
+          <input type="text" id="UyeId" formControlName="UyeId" class="form-control" aria-describedby="emailHelp">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Boy(cm)</label>
+          <input type="text" id="Boy" formControlName="Boy" class="form-control" aria-describedby="emailHelp" placeholder="Üyenin Boyunu cm Cinsinden Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Kilo(Kg)</label>
+          <input type="text" id="Kilo" formControlName="Kilo" class="form-control" aria-describedby="emailHelp" placeholder=" Üyenin Kilosunu Kg Cinsinden Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Sol Kol(cm)</label>
+          <input type="text" id="SolKol" formControlName="SolKol" class="form-control" aria-describedby="emailHelp" placeholder="Sol Kol Değerini cm Cinsinden Giriniz...">
+        </div>
+
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Sağ Kol(cm)</label>
+          <input type="text" id="SagKol" formControlName="SagKol" class="form-control" aria-describedby="emailHelp" placeholder="Sağ Kol Değerini cm Cinsinden Giriniz...">
+        </div>
+
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Omuz(cm)</label>
+          <input type="text" id="Omuz" formControlName="Omuz" class="form-control" aria-describedby="emailHelp" placeholder="Omuz Değerini cm Cinsinden Giriniz...">
+        </div>
+
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Göğüs(cm)</label>
+          <input type="text" id="Gogus" formControlName="Gogus" class="form-control" aria-describedby="emailHelp" placeholder="Göğüs Değerini cm Cinsinden Giriniz...">
+        </div>
+
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Bel(cm)</label>
+          <input type="text" id="Bel" formControlName="Bel" class="form-control" aria-describedby="emailHelp" placeholder="Bel Değerini cm Cinsinden Giriniz...">
+        </div>
+
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Sol Bacak(cm)</label>
+          <input type="text" id="SolBacak" formControlName="SolBacak" class="form-control" aria-describedby="emailHelp" placeholder="Sol Bacak Değerini cm Cinsinden Giriniz...">
+        </div>
+
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Sağ Bacak(cm)</label>
+          <input type="text" id="SagBacak" formControlName="SagBacak" class="form-control" aria-describedby="emailHelp" placeholder="Sağ Bacak Değerini cm Cinsinden Giriniz...">
+        </div>
+        <!--
+        <div class="form-group">
+          <label for="exampleTextarea">Not</label>
+          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        </div>
+-->   <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!vucutBilgiForm.valid">Vücut Bilgisi Oluştur</button>
+      </fieldset>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </form>
+  </div>
+</section>
+
+</main>

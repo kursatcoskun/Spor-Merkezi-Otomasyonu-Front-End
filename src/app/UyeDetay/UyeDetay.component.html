@@ -1,0 +1,121 @@
+<main role="main">
+  <div class="jumbotron">
+    <h1 style="text-align: center;font-size:3.5em;" class="display-3">
+      {{ uye.name }} {{ uye.surname }}
+
+    </h1>
+  
+
+   
+
+    <div class="div-btn">
+    
+      <a routerLink="/odemeEkle/{{Id}}"><button type="button" style="margin-left: 5px;" class="btn btn-primary"><i class="fa fa-plus"></i> Yeni Ödeme Al</button></a>
+      <button *ngIf="hide" (click)="programiGoster()" type="button" style="margin-left: 5px;" class="btn btn-success"><i class="fa fa-show"></i>Programı Gizle</button>
+      <button *ngIf="!hide" (click)="programiGoster()" type="button" style="margin-left: 5px;" class="btn btn-success"><i class="fa fa-show"></i>Programı Göster</button>
+      <button *ngIf="!hide2" (click)="odemeleriGoster()" type="button" style="margin-left: 5px;" class="btn btn-warning"><i class="fa fa-show"></i>Ödemeleri Göster</button>
+      <button *ngIf="hide2" (click)="odemeleriGoster()" type="button" style="margin-left: 5px;" class="btn btn-warning"><i class="fa fa-show"></i>Ödemeleri Gizle</button>
+      <a routerLink="/vucutBilgiEkle/{{Id}}"><button type="button" style="margin-left: 5px;" class="btn btn-info"><i class="fa fa-plus"></i> Yeni Vücut Ölçüsü Ekle</button></a>
+    </div>
+   
+
+
+    <hr class="my-4" />
+    
+
+         
+         
+
+  <div class="container">
+      <div class="row">
+        <div class="col">
+            <div class="card text-white bg-success mb-3" style="width: 100% !important;">
+                <div style="text-align: center;font-size: 1.3em;" class="card-header">
+                  Kişisel Bilgiler
+                </div>
+                <div class="card-body">
+                  <h4 style="text-align: center;" class="card-title">Ad Soyad</h4>
+                  <p style="text-align: center;font-size:1.3em;">
+                    {{ uye.name }} {{ uye.surname }}
+                  </p>
+                  <h4 style="text-align: center;" class="card-title">Telefon Numarası</h4>
+                  <p style="text-align: center;font-size:1.3em;">{{ uye.phone }}</p>
+                  <h4 style="text-align: center;" class="card-title">Mail Adresi</h4>
+                  <p style="text-align: center;font-size:1.3em;">{{ uye.email }}</p>
+                  <h4 style="text-align: center;" class="card-title">Aktiflik Durumu</h4>
+                  <p style="text-align: center;font-size:1.3em;">{{aktiflik}}</p>
+                  <h4 style="text-align: center;" class="card-title">Bitiş Tarihi</h4>
+                  <p style="text-align: center;font-size:1.3em;">{{bitisTarihi}}</p>
+                </div>
+                  
+              </div>
+        </div>
+        <div *ngIf="hide" class="col">
+            <div class="card text-white bg-success mb-3" style="height: 350px;">
+                <div class="card-header">PROGRAM BİLGİLERİ  <a routerLink="/ProgramEkle/{{programId}}"><button type="button" style="margin-left: 5px;" class="btn btn-primary"><i class="fa fa-plus"></i>  Antrenman Ekle</button> </a>
+                <button (click)="sendMail()" style="margin-left: 5px;" class="btn btn-primary"><i class="fa fa-envelope"></i>  Mail Gönder</button>
+              </div>
+
+                  <div class="row" *ngFor="let program of program.antrenmans;let j = index">
+                    <div class="col">
+                      <h4 id=deneme{{j}} style="text-align: center;font-size: 1.2em !important;" class="card-title">{{program.antrenmanAdi}}</h4>
+                    </div>
+                    <div class="col">
+                      <p id=deneme2{{j}} class="card-text"> - {{program.setSayisi}} X {{program.tekrarSayisi}}</p>
+                    </div>
+                    <div class="col">
+                      <button type="button" (click)="deleteAntrenman(program.id)" class="btn btn-danger btn-sm">Antrenmanı Sil</button>
+                    </div>
+                  </div>
+                </div>
+              
+        </div>
+      </div>
+  </div>
+
+
+
+<div class="container" *ngIf="vucutinfo">
+    <div class="row">
+      <div class="col-sm" *ngFor="let vucut of vucutinfo">
+          <div class="card text-white bg-info mb-3" style="max-width: 20rem;height: 350px;">
+              <div class="card-header">VÜCUT ÖLÇÜLERİ
+                <button style="margin-left:3%;" class="btn btn-danger" (click)="deleteVucutBilgi(vucut.id)">Sil</button>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">{{vucut.eklemeTarihi}}</h4>
+                <p class="card-text">Kilo: {{vucut.kilo}} kg<br> Boy: {{vucut.boy}} cm<br> Bel: {{vucut.bel}} cm<br>Göğüs: {{vucut.gogus}} cm<br> Omuz: {{vucut.omuz}} cm<br> Sağ Bacak: {{vucut.sagBacak}} cm<br> Sol Bacak: {{vucut.solBacak}} cm<br>Sağ Kol: {{vucut.sagKol}} cm<br> Sol Kol: {{vucut.solKol}} cm</p>
+              </div>
+            </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container" *ngIf="hide2">
+    <div class="row">
+      <div class="col-sm" *ngFor="let odeme of uyeOdeme">
+          <div class="card text-white bg-warning mb-3" style="max-width: 20rem;height: 350px;">
+              <div class="card-header">ÜYE ÖDEME İŞLEMİ
+                <button style="margin-left:3%;" (click)="deleteOdeme(odeme.id)" class="btn btn-danger">Sil</button>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">{{odeme.kayitTarihi}}</h4>
+                <p class="card-text">Üyelik Tipi: {{odeme.uyelikTipi}}<br>Üyelik Süresi: {{odeme.uyelikSuresi}}<br>Kayıt Tutar: {{odeme.kayitTutari}} &#8378;</p>
+              </div>
+            </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+  </div>
+  
+</main>
+
+
+

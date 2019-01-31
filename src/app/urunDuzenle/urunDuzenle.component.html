@@ -1,0 +1,37 @@
+<main role="main">
+
+  <section class="jumbotron text-center">
+      <div style="height: 100% !important;" class="container">
+    <p style="text-align: center;font-size:1.6em;">Ürün Bilgilerini Güncelleme</p>
+
+    <form [formGroup]="uyeAddForm" (ngSubmit)="update()">
+      <div hidden class="form-group">
+        <label class="label-input" for="exampleInputEmail1">ID</label>
+        <input type="text" id="id" formControlName="id" value={{id}} class="form-control" aria-describedby="emailHelp" placeholder="Ad Giriniz...">
+      </div>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Ürün İsmi</label>
+          <input type="text" id="urunAdi" formControlName="urunAdi" value={{urunAdi}} class="form-control" aria-describedby="emailHelp" placeholder="Ad Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Ürün Fiyatı</label>
+          <input type="text" id="urunFiyati" formControlName="urunFiyati" value={{urunFiyati}} class="form-control" aria-describedby="emailHelp" placeholder="Soyad Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Toplam Ürün Adedi</label>
+          <input type="text" id="toplamUrunAdedi" formControlName="toplamUrunAdedi" value={{toplamUrunAdedi}} class="form-control" aria-describedby="emailHelp" placeholder=" Telefon Numarası Giriniz...">
+        </div>
+        <br>
+     
+         <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!uyeAddForm.valid">Ürün Bilgilerini Güncelle</button>
+ 
+ 
+    </form>
+    <h1 *ngIf="hide" style="text-align: center; color:red;">Güvenlik Gereği Değiştirmediğiniz Alanları Tekrar Giriniz !</h1>
+  </div>
+</section>
+
+</main>

@@ -1,0 +1,46 @@
+<main role="main">
+
+  <section class="jumbotron text-center">
+      <div class="alert alert-dismissible alert-warning">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h4 class="alert-heading">UYARI !</h4>
+          <p class="mb-0">Güvenlik Gereği sebebiyle aynı kalmasını istediğiniz bilgileri forma tekrar giriniz.</p>
+        </div>
+      <div style="height: 100% !important;" class="container">
+        
+    <p style="text-align: center;font-size:1.6em;">Üye Bilgilerini Güncelleme</p>
+
+    <form [formGroup]="uyeAddForm" (ngSubmit)="update()">
+      <div hidden class="form-group">
+        <label class="label-input" for="exampleInputEmail1">ID</label>
+        <input type="text" id="Id" formControlName="Id" value={{Id}} class="form-control" aria-describedby="emailHelp" placeholder="Ad Giriniz...">
+      </div>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Ad</label>
+          <input type="text" id="name" formControlName="name" value={{name}} class="form-control" aria-describedby="emailHelp" placeholder="Ad Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Soyad</label>
+          <input type="text" id="surname" formControlName="surname" value={{surname}} class="form-control" aria-describedby="emailHelp" placeholder="Soyad Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Telefon Numarası</label>
+          <input type="text" id="phone" formControlName="phone" value={{phone}} class="form-control" aria-describedby="emailHelp" placeholder=" Telefon Numarası Giriniz...">
+        </div>
+        <br>
+        <div class="form-group">
+          <label class="label-input" for="exampleInputEmail1">Mail Adresi</label>
+          <input type="text" id="email" formControlName="email" value={{email}} class="form-control" aria-describedby="emailHelp" placeholder="Mail Adresi Giriniz...">
+        </div>
+         <br>
+        <button type="submit" class="btn btn-primary" [disabled]="!uyeAddForm.valid">Üye Bilgilerini Güncelle</button>
+ 
+ 
+    </form>
+    <h1 *ngIf="hide" style="text-align: center; color:red;">Güvenlik Gereği Değiştirmediğiniz Alanları Tekrar Giriniz !</h1>
+  </div>
+</section>
+
+</main>
